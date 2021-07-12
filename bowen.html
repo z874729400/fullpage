@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初学动画，挑战波纹效果</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background: black;
+    }
+    .bowen {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -100px;
+        margin-top: -100px;
+        border-radius: 50%;
+    }
+    .btn{
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, .8);
+        border-radius: 50%;
+    }
+    .cycle{
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: transparent;        
+        border: 2px solid rgba(255, 255, 255, .8);
+        border-radius: 50%;
+        z-index: 100;
+        opacity: .5;
+    }
+    .cycle01 {
+        animation: fly 2.1s linear infinite;
+        animation-delay: .3;
+    }
+    .cycle02 {
+        animation: fly 2.1s linear infinite;
+        animation-delay: .6s;
+    }
+    .cycle03 {
+        animation: fly 2.1s linear infinite;
+        animation-delay: .9s;
+    }
+    @keyframes fly {
+        from {
+           transform: scale(1);
+           opacity: .5;
+        }
+        to {
+           transform: scale(2);
+           opacity: .9;
+        }
+    }
+</style>
+<body>
+    <div class="bowen">
+        <div class="cycle cycle01"></div>
+        <div class="cycle cycle02"></div>
+        <div class="cycle cycle03"></div>
+        <div class="btn"></div>
+    </div>
+</body>
+</html>
